@@ -175,12 +175,12 @@ class Create():
 
             for i in range(50000):
                 for j in range(3):
-                    original_images_train[i,j] = tr(trainset.data[i,:,:,j])
+                    original_images_train[i,j] = tr(trainset.data[i,:,:,j].T)
                     permuted_images_train[i,j] = pmt @ (original_images_train[i,j].float()@pmt)
                     
             for i in range(10000):
                 for j in range(3):
-                    original_images_test[i,j] = tr(testset.data[i,:,:,j])
+                    original_images_test[i,j] = tr(testset.data[i,:,:,j].T)
                     permuted_images_test[i,j] = pmt @ (original_images_test[i,j].float()@pmt)
                     
 
